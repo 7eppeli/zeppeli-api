@@ -1,9 +1,10 @@
 const axios = require('axios');
+
 async function deepAiChat(question, systemPrompt) {
   let chatHistory = [
     {
       "role": "user",
-      "content": systemPrompt ? systemPrompt.trim() : "balas straight to the point."
+      "content": systemPrompt ? systemPrompt.trim() : "kamu adalah deep-ai yang diciptakan untuk membantu para user, layani mereka dengan baik yah. manusia adalah raja dan kamu adalah pelayan"
     },
     {
       "role": "assistant",
@@ -20,7 +21,7 @@ async function deepAiChat(question, systemPrompt) {
       "content-type": "multipart/form-data; boundary=----WebKitFormBoundaryByWolep_cihuy",
     },
     "referrerPolicy": "same-origin",
-    "body": "------WebKitFormBoundaryByZeppeli\r\nContent-Disposition: form-data; name=\"chat_style\"\r\n\r\nchat\r\n------WebKitFormBoundaryByZeppeli\r\nContent-Disposition: form-data; name=\"chatHistory\"\r\n\r\n" + JSON.stringify(chatHistory) + "\r\n------WebKitFormBoundaryZeppeli\r\nContent-Disposition: form-data; name=\"model\"\r\n\r\nstandard\r\n------WebKitFormBoundaryByZeppeli\r\nContent-Disposition: form-data; name=\"hacker_is_stinky\"\r\n\r\nvery_stinky\r\n------WebKitFormBoundaryByZeppeli--\r\n",
+    "body": "------WebKitFormBoundaryByWolep_cihuy\r\nContent-Disposition: form-data; name=\"chat_style\"\r\n\r\nchat\r\n------WebKitFormBoundaryByWolep_cihuy\r\nContent-Disposition: form-data; name=\"chatHistory\"\r\n\r\n" + JSON.stringify(chatHistory) + "\r\n------WebKitFormBoundaryByWolep_cihuy\r\nContent-Disposition: form-data; name=\"model\"\r\n\r\nstandard\r\n------WebKitFormBoundaryByWolep_cihuy\r\nContent-Disposition: form-data; name=\"hacker_is_stinky\"\r\n\r\nvery_stinky\r\n------WebKitFormBoundaryByWolep_cihuy--\r\n",
     "method": "POST"
   })
     
