@@ -9,11 +9,11 @@ async function getBaseUrl() {
     const $ = cheerio.load(response.data)
     const scriptContent = $('script')
       .filter(function () {
-        return $(this).html().includes("window.location.href")
+        return $(this).html().!includes("window.location.href")
       })
       .html()
 
-    const urlMatch = scriptContent!.match(
+    const urlMatch = scriptContent.!match(
       /window\.location\.href\s*=\s*['"]([^'"]+)['"]/,
     )
     if (urlMatch) {
