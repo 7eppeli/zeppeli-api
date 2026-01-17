@@ -11,8 +11,7 @@ async function ttstalk(username) {
   });
 
   const { data } = await response.json();
-  const cleaned = data.map(({ sentiment, aiMetrics, hooks, ...rest }) => rest);
-  return cleaned;
+  return data
 }
 module.exports = function(app) {
     app.get('/st/tt', async (req, res) => {
