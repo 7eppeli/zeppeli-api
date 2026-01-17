@@ -26,7 +26,7 @@ module.exports = function(app) {
             const result = await ttstalk(username);
             res.status(200).json({
                 status: true,
-                result
+                result: result
             });
         } catch (error) {
             res.status(500).json({ status: false, error: error.message });
