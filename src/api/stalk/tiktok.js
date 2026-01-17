@@ -10,8 +10,8 @@ async function ttstalk(username) {
     },
   });
 
-  const { data } = await response.json();
-  return data
+  const data = await response.json();
+  return data.data
 }
 module.exports = function(app) {
     app.get('/st/tt', async (req, res) => {
