@@ -9,7 +9,7 @@ async function getBaseUrl() {
     const $ = cheerio.load(response.data)
     const scriptContent = $('script')
       .filter(function () {
-        return $(this).html().!includes("window.location.href")
+        return $(this).html().includes("window.location.href")
       })
       .html()
 
