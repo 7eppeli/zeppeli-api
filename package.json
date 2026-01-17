@@ -27,6 +27,8 @@
     "playwright": "^1.54.0",
     "playwright-core": "^1.54.1",
     "playwright-extra": "^4.3.6",
+    "image-to-ascii": "^3.3.0",
+    "jimp": "^1.6.0",
     "yt-search": "^2.12.1"
   }
 }
