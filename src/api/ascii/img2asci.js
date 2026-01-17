@@ -1,5 +1,5 @@
 const axios = require('axios');
-const Jimp = require('jimp');
+const { Jimp } = require('jimp');
 const ImageToAscii = require('image-to-ascii');
 module.exports = function(app) {
     app.get('/ascii/convert', async (req, res) => {
@@ -18,18 +18,24 @@ module.exports = function(app) {
     
             const bufferResized = await img.getBufferAsync(Jimp.MIME_PNG);
     
-            ImageToAscii(bufferResized, { colored: false }, (err, converted) => {
+            ImageToAscii(bufferResized, { colored: false }, (err, result) => {
                 if (err) {
                     console.error(err);
                     return res.status(500).send('Error mengconvert gambar ke ASCII');
                 }
                 res.set('Content-Type', 'text/plain');
-                res.send(converted);
+                res.(200)json({
+                    status: true,
+                    result
+                });
             });
     
         } catch (error) {
             console.error(error);
-            res.status(500).send('Error mengambil atau memproses gambar');
+            res.status(500).json({
+                status: false
+                message: 'Error mengambil atau memproses gambar'
+            });
         }
     });
 }
