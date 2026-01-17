@@ -27,7 +27,7 @@ async function getBaseUrl() {
   }
 }
 
-async function getLatestSamehadakuAnime() {
+async function scrapeData() {
   try {
     const baseUrl = await getBaseUrl()
     const url = baseUrl + "/anime-terbaru/"
