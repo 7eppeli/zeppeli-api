@@ -38,7 +38,7 @@ module.exports = function(app) {
             });
         }
         try {
-            const result = await getAnimeDetail(url);
+            const result = await scrapeData();
             res.status(200).json({
                 status: true,
                 result
