@@ -3,7 +3,7 @@ const yts = require('yt-search');
 async function ytser(query) {
   try {
     const results = await yts(query);
-    return result.all
+    return results.all
   } catch (error) {
     throw new Error(`Error searching YouTube: ${error.message}`)
   }
