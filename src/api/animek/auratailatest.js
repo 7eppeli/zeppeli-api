@@ -30,13 +30,6 @@ async function scrapeData() {
 }
 module.exports = function(app) {
     app.get('/anime/latest', async (req, res) => {
-        const { url } = req.query;
-        if (!url) {
-            return res.status(400).json({
-              status: false,
-              error: '"url" is required'
-            });
-        }
         try {
             const result = await scrapeData();
             res.status(200).json({
