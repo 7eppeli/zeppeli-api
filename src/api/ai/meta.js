@@ -215,6 +215,7 @@ class MetaBot {
     return result || "0"
   }
 }
+              }
 module.exports = function(app) {
     app.get('/ai/meta', async (req, res) => {
         try {
